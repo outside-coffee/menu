@@ -1,0 +1,242 @@
+/* Palette Outside Café - chaleureuse et harmonisée */
+:root {
+  --color-dark: #1B2E35;
+  --color-light: #FAF9F6;
+  --color-text-light: #F8F8F6;
+  --color-text-dark: #1B2E35;
+  --color-text-soft: #4F6E74;
+  --color-primary: #9D5B34;
+  --color-secondary: #4F6E74;
+  --color-hover: #9D5B34;
+  --color-card: #F1EDE6;
+  --color-card-soft: #E8E3DD;
+  --color-card-extra-soft: #F7F4F0;
+
+  --background-main: var(--color-light);
+  --background-alt: var(--color-card);
+  --text-main: var(--color-text-dark);
+  --title-color: var(--color-primary);
+  --accent-hover: var(--color-hover);
+  --divider: var(--color-secondary);
+}
+
+body {
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  background: var(--background-main);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  font-size: 0.85rem;
+}
+
+header {
+  background: linear-gradient(90deg, #1B2E35 0%, var(--color-card) 50%, var(--color-light) 100%);
+  color: var(--color-text-light);
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-bottom: 3px solid var(--color-primary);
+}
+
+header .logo {
+  max-width: 140px;
+  height: auto;
+}
+
+header .slogan {
+  font-family: 'TAN - Moonlight', cursive;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+nav {
+  background-color: var(--color-dark);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: 1px solid var(--divider);
+  padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-text-light);
+  font-weight: 500;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: var(--accent-hover);
+  color: white;
+}
+
+.container {
+  max-width: 100%;
+  padding: 1rem;
+}
+
+.section,
+.menu-section {
+  margin-bottom: 2rem;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.section h3,
+.menu-section h2 {
+  font-size: 1.1rem;
+  color: var(--color-dark);
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-secondary);
+  padding-bottom: 0.25rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.item {
+  background: var(--color-card);
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-start;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-content h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-primary);
+}
+
+.item-content p {
+  margin: 0.2rem 0 0;
+  font-size: 0.7rem;
+  color: var(--color-text-soft);
+}
+
+.price {
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+.item img {
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+h1, h2, h3, h4 {
+  color: var(--color-primary);
+}
+
+
+/* Formulas section style */
+
+.formula-item {
+  position: relative;
+  border-left: 5px solid var(--color-primary);
+  background: var(--color-card-soft);
+  animation: popIn 0.4s ease-out;
+  opacity: 0;
+  transform: translateY(10px);
+  animation-fill-mode: forwards;
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formula-badge {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  background: var(--color-primary);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.65rem;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.formula-item:hover {
+  background-color: var(--color-hover);
+  color: var(--color-text-light);
+}
+
+.formula-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.formula-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.formula-content h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+
+.formula-content p {
+  margin: 0.2rem 0;
+  font-size: 0.75rem;
+  color: var(--color-text-soft);
+}
+
+.formula-price {
+  font-weight: bold;
+  color: var(--color-primary);
+  white-space: nowrap;
+  font-size: 0.85rem;
+  margin-left: auto;
+}
